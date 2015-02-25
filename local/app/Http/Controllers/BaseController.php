@@ -28,10 +28,14 @@ class BaseController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
 	{
-	$name = 324;
+	$name = "HI my dear friend";
 		return view('home')->with('name',$name);
 	}
-
+	public function getArticles()
+	{
+	$name = "Статьи";
+		return view('articles')->with('name',$name);
+	}
 }

@@ -7,11 +7,12 @@ use View;
 
 abstract class Controller extends BaseController {
 public $styles = array('css/boostrap.css', 'css/main.css');
-public $scripts = array('');
+public $scripts = array();
 public function __construct(){
 
  View::composer('app', function($view){
- $view->with('styles', $this->styles);
+ $view->with('styles', $this->styles)
+       ->with('scripts', $this->scripts);
 
  });
 	

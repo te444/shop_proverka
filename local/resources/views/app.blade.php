@@ -10,6 +10,9 @@
 @foreach ($styles as $style)
 <link href='{{asset($style)}}' rel='stylesheet' />
 @endforeach
+@foreach ($scripts as $script)
+<script src='{{asset($script)}}' type='text/javascript' />
+@endforeach	
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
