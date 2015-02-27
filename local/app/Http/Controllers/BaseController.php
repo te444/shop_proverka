@@ -1,4 +1,6 @@
 <?php namespace App\Http\Controllers;
+use App\Product;
+
 
 class BaseController extends Controller {
 
@@ -20,6 +22,7 @@ class BaseController extends Controller {
 	 */
 	public function __construct()
 	{
+	
 	parent::__construct();	
 	}
 
@@ -37,5 +40,15 @@ class BaseController extends Controller {
 	{
 	$name = "Статьи";
 		return view('articles')->with('name',$name);
+	}
+	public function getProducts()
+	{
+	 $products = Product::all();
+	 
+	return view('products')->with('name',$products);
+	}
+	
+	public function getAuth(){
+	
 	}
 }

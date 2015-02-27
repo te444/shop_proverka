@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-class HomeController extends Controller {
+class ProductsController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -32,8 +32,8 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-	$name= "hiii";
-		return view('home')->with('name', $name);
+	
+		return view('products');
 	}
 
 }
