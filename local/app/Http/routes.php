@@ -11,11 +11,14 @@
 |
 */
 Route::get('/', 'HomeController@index');
-Route::get('/products', 'ProductController@index');
+Route::get('products', 'ProductController@index');
+Route::get('test', 'HomeController@test');
+Route::get('admin', 'Adminka\AdminController@index');
 
 
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
+	
 ]);
