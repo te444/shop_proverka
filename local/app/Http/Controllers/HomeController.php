@@ -1,5 +1,7 @@
-<?php namespace App\Http\Controllers;
+<?php 
+namespace App\Http\Controllers;
 
+use App;
 class HomeController extends Controller {
 
 	/*
@@ -34,6 +36,15 @@ class HomeController extends Controller {
 	{
 	$name= "hiii";
 		return view('home')->with('name', $name);
+	}
+	
+	public function test(){
+	
+
+
+App::make('App\Libs\Test')->foo();
+	
+	
 	}
 
 }
