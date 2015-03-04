@@ -14,7 +14,7 @@ $this->styles[]= 'css/admin.css';
 
 }
 
-public function index(){
+public function getIndex(){
 
 return view('admin');
 
@@ -22,10 +22,16 @@ return view('admin');
 }
 
 
-public function parse(){
+public function getParse(){
     
-    return view('parseform');
+    return view('admin')->nest('parse_form', 'parseform');
     
+}
+
+public function getUsers(){
+$users  = \App\User::all();
+return view('admin')->with('users', $users);
+
 }
 
 

@@ -14,12 +14,22 @@
 				<li><a href="{{asset('admin/look_and_fell')}}">Внешний вид</a></li>
 				<li><a href="{{asset('admin/parse')}}">Парсинг</a></li>
 				<li><a href="{{asset('admin/production_list')}}">Перечень продокции</a></li>
-				<li><a href="{{asset('admin/registered_users')}}">Зарегестрированные пользователи</a></li>
+				<li><a href="{{asset('admin/users')}}">Зарегестрированные пользователи</a></li>
 				
 				
 				</ul>
 				</div>	
+				<?php 
+				if(isset($parse_form)){
+				echo $parse_form; 
+				}
+				if(isset($users)){
+				foreach($users as $user){
+				echo $user->name."<br />";
+				}
+				}
 				
+				?>
 			</div>
 		</div>
 	</div>

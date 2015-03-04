@@ -54,7 +54,7 @@
 </div>
 </div>
 </nav>
-    <p id="img_main"> <img  src="img/slide-bar/Untitled.jpg" alt="img" /></p>
+    <p id="img_main"> <img  src="{{asset('img/slide-bar/Untitled.jpg')}}" alt="img" /></p>
 @yield('content')
 <!-- Scripts -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

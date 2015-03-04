@@ -3,7 +3,7 @@
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use App;
-
+use Auth;
 class Admin{
 
 	/**
@@ -43,6 +43,12 @@ class Admin{
 			{
 				return redirect()->guest('auth/login');
 			}
+		}
+		else{
+		if(Auth::user()->isAdmin !=1 ) {
+		return redirect()->guest('auth/login');
+		}
+		
 		}
 
 		return $next($request);

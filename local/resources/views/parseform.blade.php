@@ -1,6 +1,6 @@
-@extends('app')
 
-@section('content')
+
+
 <div>
     <form>
         Введите Url Cайта <input type="text" name="parse_url" />
@@ -13,4 +13,3 @@
     
 </div>
 
-@endsection
