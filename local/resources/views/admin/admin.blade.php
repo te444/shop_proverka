@@ -28,10 +28,6 @@
 				echo $regusers;
 				}
 				
-				if(isset($orderproducts)){
-				echo $orderproducts;
-				}
-				
 				
 				?>
 			</div>

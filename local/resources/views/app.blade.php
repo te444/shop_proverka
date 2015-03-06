@@ -55,8 +55,50 @@
 </div>
 </nav>
     
+	
+	
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
 
-    <p id="img_main"> <img  src="{{asset('img/slide-bar/Untitled.jpg')}}" alt="img" /></p>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img class="img_carusel" src="{{asset('img/slide-bar/slide1.jpg')}}" alt="...">
+      <div class="carousel-caption">
+       asdf
+      </div>
+    </div>
+    <div class="item">
+      <img class="img_carusel" src="{{asset('img/slide-bar/slide2.jpg')}}" alt="...">
+      <div class="carousel-caption">
+    asdfa
+      </div>
+    </div><div class="item">
+      <img class="img_carusel" src="{{asset('img/slide-bar/slide3.jpg')}}" alt="...">
+      <div class="carousel-caption">
+    asdfa
+      </div>
+    </div>
+   <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  </div>
+
+  
+</div>
+
+    
 @yield('content')
 <!-- Scripts -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
