@@ -30,7 +30,8 @@ public function getParse(){
 
 public function getUsers(){
 $users  = \App\User::all();
-return view('admin')->with('users', $users);
+$a = view('regusers')->with('users', $users);
+return view('admin')->with('regusers', $a);
 
 }
 

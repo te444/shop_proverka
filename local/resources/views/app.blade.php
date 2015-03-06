@@ -54,6 +54,8 @@
 </div>
 </div>
 </nav>
+    
+
     <p id="img_main"> <img  src="{{asset('img/slide-bar/Untitled.jpg')}}" alt="img" /></p>
 @yield('content')
 <!-- Scripts -->

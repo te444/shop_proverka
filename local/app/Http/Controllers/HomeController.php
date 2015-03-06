@@ -19,9 +19,16 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-	$name= "hiii";
-		return view('home')->with('name', $name);
-	}
+	$last_added= \App\Product::all();;
+		
+	$a = view('last_added')->with('products', $last_added);
+        return view('home')->with('last_added', $a);
+                
+        }
+        
+        
+        
+        
 	
 	public function test(){
 	

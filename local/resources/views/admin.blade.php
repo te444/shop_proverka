@@ -23,11 +23,10 @@
 				if(isset($parse_form)){
 				echo $parse_form; 
 				}
-				if(isset($users)){
-				foreach($users as $user){
-				echo $user->name."<br />";
+				if(isset($regusers)){
+				echo $regusers;
 				}
-				}
+				
 				
 				?>
 			</div>
