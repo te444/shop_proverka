@@ -1,7 +1,8 @@
 <?php
 namespace App\Http\Controllers\Adminka;
 use App\Http\Controllers\Controller;
-
+use Image;
+use Input;
 
 
 class AdminController extends Controller{
@@ -36,6 +37,7 @@ return view('admin/admin')->with('regusers', $a);
 
 }
 
+
 public function getBasket(){
 
 $order  = \App\Orders::all();
@@ -45,14 +47,22 @@ return view('admin/admin')->with('orderproducts', $a);
 
 }
 
+
+
 public function getAdd(){
     $add = new \App\Product();
     $input  = new \Illuminate\Support\Facades\Input();
    
     if($input::get('name') != Null ){
-
-    $name = $input::get('name');
+	$img_name = time().'image.jpg';
+    $price = $input::get('price');
+    $img = $input::file('img')->move("img/clock", $img_name);
+	$name = $input::get('name');
+	
+	
     $add->name = $name;
+    $add->img = $img_name;
+    $add->price = $price;
    
     $add->save();
     

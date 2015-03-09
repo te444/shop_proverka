@@ -18,7 +18,10 @@ class CreateProductsTable extends Migration {
 			$table->string('name');
 			$table->string('price');
 			$table->string('img');
-			$table->string('order');
+			$table->string('weight');
+			$table->string('property');
+			$table->string('marka');
+			$table->string('model');
 		$table->timestamps();
 		
 		});

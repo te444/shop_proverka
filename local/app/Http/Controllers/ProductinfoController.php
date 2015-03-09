@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use App;
-class ProductController extends Controller {
+class ProductinfoController extends Controller {
 
 	
 	public function __construct()
@@ -17,19 +17,15 @@ class ProductController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($id)
 	{
 	
-	
-
-	
-
-$last_added= \App\Product::all();;
+	$product= \App\Product::find($id);
 		
 	
-        return view('product')->with('products', $last_added);
+    return view('product_info')->with('product', $product);
                 
-        }
+    }
 	
 
 }

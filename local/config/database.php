@@ -57,7 +57,7 @@ return [
 			'host'      => 'localhost',
 			'database'  => 'shop',
 			'username'  => 'root',
-			'password'  => '123',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'port' => 3307,
 			'collation' => 'utf8_unicode_ci',
