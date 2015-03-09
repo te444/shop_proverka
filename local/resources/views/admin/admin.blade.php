@@ -11,6 +11,7 @@
 				<div id="admin_cat">
 				<ul>
 				<li><a href="{{asset('admin/tools')}}">Настройки сайта</a></li>
+                                <li><a href="{{asset('admin/add')}}">Добавить товар</a></li>
 				<li><a href="{{asset('admin/look_and_fell')}}">Внешний вид</a></li>
 				<li><a href="{{asset('admin/parse')}}">Парсинг</a></li>
 				<li><a href="{{asset('admin/production_list')}}">Перечень продокции</a></li>
@@ -26,7 +27,11 @@
 				}
 				if(isset($regusers)){
 				echo $regusers;
-				}
+                                }
+                                if(isset($addproduct)){
+                                    echo $addproduct;
+                                }
+				
 				
 				
 				?>

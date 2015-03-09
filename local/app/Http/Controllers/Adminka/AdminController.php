@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Adminka;
 use App\Http\Controllers\Controller;
 
 
+
 class AdminController extends Controller{
 public function __construct(){
 parent::__construct();
@@ -16,7 +17,7 @@ $this->styles[]= 'css/admin.css';
 
 public function getIndex(){
 
-return view('.admin');
+return view('admin/admin');
 
 
 }
@@ -24,14 +25,14 @@ return view('.admin');
 
 public function getParse(){
     
-    return view('.admin')->nest('parse_form', 'admin/parseform');
+    return view('admin/admin')->nest('parse_form', 'admin/parseform');
     
 }
 
 public function getUsers(){
 $users  = \App\User::all();
 $a = view('admin/regusers')->with('users', $users);
-return view('.admin')->with('regusers', $a);
+return view('admin/admin')->with('regusers', $a);
 
 }
 
@@ -39,9 +40,29 @@ public function getBasket(){
 
 $order  = \App\Orders::all();
 $a = view('admin/orderproducts')->with('orders', $order);
-return view('.admin')->with('orderproducts', $a);
+return view('admin/admin')->with('orderproducts', $a);
 
 
+}
+
+public function getAdd(){
+    $add = new \App\Product();
+    $input  = new \Illuminate\Support\Facades\Input();
+   
+    if($input::get('name') != Null ){
+
+    $name = $input::get('name');
+    $add->name = $name;
+   
+    $add->save();
+    
+   }
+    
+    
+    return view('admin/admin')->nest('addproduct', 'admin/addproduct');
+    
+    
+    
 }
 
 
