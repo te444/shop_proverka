@@ -6329,3 +6329,17 @@ background-color:#F8F8DD;
 width:100%;
 margin:auto;
 }
+
+
+#product_info{
+    width: 100%;
+}
+
+
+#product_info tr{
+    display: block;
+    padding: 22px;
+}
+#product_info td{
+    margin: 150px;
+}

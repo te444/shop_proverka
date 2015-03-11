@@ -3,6 +3,7 @@
     <tr>
     <?php 
     $i=1;
+    $k=0;
     foreach ($products as $product){
         echo "<td ><table id='onepr' border='1'>";
         echo "<tr><td>Добавлен".$product->created_at."</td><td> Цена:".$product->price."</td></tr>"; 
@@ -13,6 +14,10 @@
         if($i==3)
                 echo "</tr><tr>";
         $i++;
+        $k++;
+          if($k==6){
+              break;
+          }
     }
     
     

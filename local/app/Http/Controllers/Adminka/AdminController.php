@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Adminka;
 use App\Http\Controllers\Controller;
 use Image;
 use Input;
+use Illuminate\Support\Facades\File;
 
 
 class AdminController extends Controller{
@@ -56,10 +57,9 @@ public function getAdd(){
     if($input::get('name') != Null ){
 	$img_name = time().'image.jpg';
     $price = $input::get('price');
-    $img = $input::file('img')->move("img/clock", $img_name);
-	$name = $input::get('name');
-	
-	
+    $img = $input::file('image')->move("img/clock", $img_name);
+   
+    $name = $input::get('name');
     $add->name = $name;
     $add->img = $img_name;
     $add->price = $price;
