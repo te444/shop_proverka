@@ -51,28 +51,41 @@ return view('admin/admin')->with('orderproducts', $a);
 
 
 public function getAdd(){
-    $add = new \App\Product();
-    $input  = new \Illuminate\Support\Facades\Input();
-   
-    if($input::get('name') != Null ){
-	$img_name = time().'image.jpg';
-    $price = $input::get('price');
-    $img = $input::file('image')->move("img/clock", $img_name);
-   
-    $name = $input::get('name');
-    $add->name = $name;
-    $add->img = $img_name;
-    $add->price = $price;
-   
-    $add->save();
     
-   }
     
     
     return view('admin/admin')->nest('addproduct', 'admin/addproduct');
     
     
     
+}
+
+public function postAdd(){
+     $add = new \App\Product();
+    $input  = new \Illuminate\Support\Facades\Input();
+   
+    if($input::get('marka') != Null ){
+	
+	$img_name = time().'image.jpg';
+	$img = $input::file('image')->move("img/clock", $img_name);
+	$price = $input::get('price');
+	$model = $input::get('model');
+	$marka = $input::get('marka');
+	$weight = $input::get('weight');
+	$property = $input::get('property');
+	
+    $name = $input::get('name');
+    $add->name = $name;
+    $add->img = $img_name;
+    $add->price = $price;
+    $add->model = $model;
+    $add->marka = $marka;
+    $add->weight = $weight;
+    $add->property = $property;
+    $add->save();
+    
+   }
+
 }
 
 

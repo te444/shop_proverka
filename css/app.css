@@ -6283,10 +6283,25 @@ font-weight: 300;
 #lastadd{
   
     width: 100%;
+	text-align:center;
+}
+
+#lastadd td{
+  width: 33%;
+  text-align:center;
 }
 #lastadd table{
-    width: 95%;
+   display:table-block;
+   height: 90%;
+    width: 27%;
     margin-top: 10px;
+	margin-left: 20px;
+       
+        
+}
+#more{
+   height: 60px;
+   display:table-block;
        
         
 }
@@ -6301,7 +6316,7 @@ font-weight: 300;
 
 
 #primg{
-    height: 350px;
+    height: 256px;
 }
 
 .img_carusel{

@@ -16,6 +16,7 @@ Route::get('test', 'HomeController@test');
 Route::get('product/{id}', 'ProductinfoController@index');
 
 
+
 //Route::get('admin', 'Adminka\AdminController@index');
 //Route::get('admin/parse', 'Adminka\AdminController@parse');
 

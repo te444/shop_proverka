@@ -2,27 +2,18 @@
 
 @section('content')
 
-<div id="addproduct">
-    <form  method="post" action="http://shop/admin/add" enctype="multipart/form-data">
-       Название товара: <input type="text" name="name" /><br/>
-        Цена:<input type="text" name="price"/><br/>
-        Изображение: <input type="file" name="image"/><br/>
-        <input type="submit" value="Добаваить" />
-    </form> 
-    
-</div>
 <?php
+echo "<hr / >";
 
+echo Form::open(array('url' => '/admin/add', 'method' => 'post', 'files'=>true));
+echo  Form::label('marka', 'Марка товара').":".Form::text('marka')."<br />";
+echo  Form::label('model', 'Модель товара').":".Form::text('model')."<br />";
+echo  Form::label('price', 'Цена').":".Form::text('price')."<br />";
+echo  Form::label('property', 'Характеристики').":".Form::text('property')."<br />";
+echo  Form::label('weight', 'Вес').":".Form::text('weight')."<br />";
+echo  Form::label('image', 'Изображение').":".Form::file('image')."<br />";
+echo Form::submit('Отправить');
 
-echo Form::open('register', 'POST');
-
-echo Form::label('username', 'Username') . Form::text('username', Input::old('username'));
-echo Form::label('email', 'E-mail') . Form::text('email', Input::old('email'));
-echo Form::label('password', 'Password') . Form::password('password');
-
-echo Form::submit('Register!');
-
-echo Form::token() . Form::close();
         
 ?>
 
