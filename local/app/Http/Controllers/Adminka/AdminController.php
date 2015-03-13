@@ -67,12 +67,14 @@ public function postAdd(){
     if($input::get('marka') != Null ){
 	
 	$img_name = time().'image.jpg';
+        $video_name = time().'video.mp4';
 	$img = $input::file('image')->move("img/clock", $img_name);
+        $img = $input::file('video')->move("video/clock", $video_name);
 	$price = $input::get('price');
 	$model = $input::get('model');
 	$marka = $input::get('marka');
 	$weight = $input::get('weight');
-	$property = $input::get('property');
+        $property = $input::get('property');
 	
     $name = $input::get('name');
     $add->name = $name;
@@ -82,6 +84,7 @@ public function postAdd(){
     $add->marka = $marka;
     $add->weight = $weight;
     $add->property = $property;
+    $add->video = $video_name;
     $add->save();
     
    }

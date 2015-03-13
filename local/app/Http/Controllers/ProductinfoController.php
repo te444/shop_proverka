@@ -1,5 +1,8 @@
 <?php 
 namespace App\Http\Controllers;
+use Input;
+use Session;
+Use Auth;
 
 use App;
 class ProductinfoController extends Controller {
@@ -17,15 +20,20 @@ class ProductinfoController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index($id)
+	public function Index($id)
 	{
 	
 	$product= \App\Product::find($id);
-		
 	
-    return view('product_info')->with('product', $product);
-                
+        
+        if(Input::get('add')!= NULL){
+            Session::put(Auth::user()->id, Input::get('add'));
+           
+        }
+             return view('product_info')->with('product', $product);   
     }
+    
+    
 	
 
 }

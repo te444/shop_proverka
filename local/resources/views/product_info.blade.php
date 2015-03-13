@@ -7,7 +7,7 @@
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
                             <div class="panel-heading" style="text-align: center;"><?php
- echo "<b>".$product->name."</b>";
+ echo "Описание     <b>". $product->marka.": ".$product->model."</b>";
 ?></div>
 
 		
@@ -18,6 +18,11 @@
 <td><?php
  echo $product->marka;
 ?></td>
+<td rowspan="5"><img src='<?php echo asset("img/clock/".$product->img); ?>' width='80%'>
+</td>
+<td rowspan="5">
+    <video src='<?php echo asset("video/clock/".$product->video); ?>' width="80%" style="border-radius: 10px;" controls></video>
+</td>
 </tr>
 
 
@@ -25,7 +30,9 @@
 
 <tr>
 <td>Модель</td>
-<td>sdfsdfd</td>
+<td><?php
+ echo $product->model;
+?></td>
 </tr>
 
 
@@ -55,15 +62,21 @@
 
 <tr>
     <td colspan="2" style="text-align: center;">
-    <a href="#" class="btn btn-primary btn-lg active" role="button">Добавить в карзину</a>
+        <form method="get" >
+         <input type="hidden" name="add" value="<?php echo $product->id; ?>" />
+         <input type="submit" value="Добавить в корзину" />
+        </form>
+    
 </td>
 </tr>
 
 </table>
-
+                            
 		</div>
 	</div>
 </div>
+    
+    
     
     
     

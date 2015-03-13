@@ -12,6 +12,7 @@ echo  Form::label('price', 'Цена').":".Form::text('price')."<br />";
 echo  Form::label('property', 'Характеристики').":".Form::text('property')."<br />";
 echo  Form::label('weight', 'Вес').":".Form::text('weight')."<br />";
 echo  Form::label('image', 'Изображение').":".Form::file('image')."<br />";
+echo  Form::label('video', 'Видео').":".Form::file('video')."<br />";
 echo Form::submit('Отправить');
 
         

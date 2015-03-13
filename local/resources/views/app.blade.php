@@ -35,8 +35,8 @@
 <ul class="nav navbar-nav">
 <li><a href="/">Главная</a></li>
 <li><a href="{{asset('/products')}}">Продукция</a></li>
-<li><a href="{{asset('/basket/basket')}}">Контакты</a></li>
-<li><a href="{{asset('/basket/basket')}}">Корзина</a></li>
+    <li><a href="{{asset('/contacts')}}">Контакты</a></li>
+<li><a href="{{asset('/basket')}}">Корзина</a></li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
 @if (Auth::guest())

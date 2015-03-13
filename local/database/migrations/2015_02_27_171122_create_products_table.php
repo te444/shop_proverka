@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration {
 			$table->string('property');
 			$table->string('marka');
 			$table->string('model');
+                        $table->string('video');
 		$table->timestamps();
 		
 		});

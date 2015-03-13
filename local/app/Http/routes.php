@@ -15,6 +15,10 @@ Route::get('products', 'ProductController@index');
 Route::get('test', 'HomeController@test');
 Route::get('product/{id}', 'ProductinfoController@index');
 
+Route::get('contacts', 'ContactsController@index');
+Route::get('basket', 'BasketController@index');
+
+
 
 
 //Route::get('admin', 'Adminka\AdminController@index');
@@ -26,6 +30,7 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 	'admin' => 'Adminka\AdminController',
+        //'product/{id}'=>'ProductinfoController',
        
 	
 ]);
