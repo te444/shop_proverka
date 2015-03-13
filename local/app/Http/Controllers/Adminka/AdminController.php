@@ -4,6 +4,8 @@ use App\Http\Controllers\Controller;
 use Image;
 use Input;
 use Illuminate\Support\Facades\File;
+use \App\Product;
+use Redirect;
 
 
 class AdminController extends Controller{
@@ -11,17 +13,11 @@ public function __construct(){
 parent::__construct();
 $this->middleware('admin');
 $this->styles[]= 'css/admin.css';
-
-
-
-
 }
 
 public function getIndex(){
 
 return view('admin/admin');
-
-
 }
 
 
@@ -51,14 +47,9 @@ return view('admin/admin')->with('orderproducts', $a);
 
 
 public function getAdd(){
-    
-    
-    
+   
     return view('admin/admin')->nest('addproduct', 'admin/addproduct');
-    
-    
-    
-}
+ }
 
 public function postAdd(){
      $add = new \App\Product();
@@ -91,6 +82,19 @@ public function postAdd(){
 
 }
 
+public function getProductlist(){
+$allproduct = Product::all();
+ $product = view('admin/productlist')->with('allproduct', $allproduct);
+ return view('admin/admin')->with('productlist', $product);
+
+}
+
+public function getDelete($id){
+Product::find($id)->delete();
+return Redirect::to('admin/productlist');
+
+
+}
 
 }
 

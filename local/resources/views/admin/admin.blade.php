@@ -14,7 +14,7 @@
                                 <li><a href="{{asset('admin/add')}}">Добавить товар</a></li>
 				<li><a href="{{asset('admin/look_and_fell')}}">Внешний вид</a></li>
 				<li><a href="{{asset('admin/parse')}}">Парсинг</a></li>
-				<li><a href="{{asset('admin/production_list')}}">Перечень продокции</a></li>
+				<li><a href="{{asset('admin/productlist')}}">Перечень продокции</a></li>
 				<li><a href="{{asset('admin/users')}}">Зарегестрированные пользователи</a></li>
 				<li><a href="{{asset('admin/basket')}}">Корзина заказов</a></li>
 				
@@ -30,6 +30,9 @@
                                 }
                                 if(isset($addproduct)){
                                     echo $addproduct;
+                                }
+								if(isset($productlist)){
+                                    echo $productlist;
                                 }
 				
 				

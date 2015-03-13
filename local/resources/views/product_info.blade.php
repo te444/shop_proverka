@@ -18,11 +18,14 @@
 <td><?php
  echo $product->marka;
 ?></td>
-<td rowspan="5"><img src='<?php echo asset("img/clock/".$product->img); ?>' width='80%'>
+<td rowspan="5"><img src='<?php echo asset("img/clock/".$product->img); ?>' width='100%'>
 </td>
-<td rowspan="5">
-    <video src='<?php echo asset("video/clock/".$product->video); ?>' width="80%" style="border-radius: 10px;" controls></video>
-</td>
+<?php 
+if(isset($product->video)){
+$link = asset('video/clock/'.$product->video);
+echo "<td id='tablevideo' rowspan='5'><video src='".$link."' width='100%' style='border-radius: 10px;' controls></video></td>";
+}
+?>
 </tr>
 
 
