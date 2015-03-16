@@ -4,6 +4,7 @@ use App\Product;
 use Session;
 use App;
 use Auth;
+use DB;
 use Illuminate\Support\Facades\Redirect;
 use Cookie;
 class BasketController extends Controller {
@@ -23,13 +24,29 @@ class BasketController extends Controller {
 	 */
 	public function index()
 	{
-          
-	//$orderproducts = Session::get(Auth::user()->id);
-	$a = Cookie::get('mama');
-    return view('basket')->with('orderproducts',$a );
+	$allProduct = array();
+	
+	foreach($_COOKIE as $name => $number){
+	
+	$name = (int)$name;
+	if($name>0){
+	$allProduct[$name] = $number;
+	}
+	
+	}
+	
+ 
+	$prod_arr = array();
+	foreach($allProduct as $key=>$value){
+	 $prod_arr[] =  Product::find($key);
+	}
+	
+	
+	
+    return view('basket')->with('orderproducts',$prod_arr );
                 
     }
-    
+   
    /* public function getDelete($id){
      
         $all= array();
@@ -41,6 +58,12 @@ class BasketController extends Controller {
        return Redirect::to('basket');
 
 
+	      @foreach($orderproducts as $product)
+							<tr>
+							<td>{{$product->marka.": ".$product->model}}</td>
+							<td><img src="{{asset('img/clock/'.$product->img)}}" width="30%"/> </td>
+							</tr>
+							@endforeach
 }
 	
 */

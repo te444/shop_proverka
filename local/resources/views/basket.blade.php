@@ -18,10 +18,7 @@
                                        <th>Удалить из корзины</th>
                                    </tr>
                                    
-                             <?php
-                             echo $orderproducts;
-                             echo 123;
-                             ?>
+                           {!! print_r($orderproducts)!!}
                            
   
   

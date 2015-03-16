@@ -22,17 +22,16 @@ class ProductinfoController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function Index($id)
+	public function index($id)
 	{
 	
 	$product= \App\Product::find($id);
 	
         
         if(Input::get('add')!= NULL){
-           $key = array();
-           $key[]= Input::get('add');
-          
-           Cookie::make('mama', '2222');
+		 $idProduct = Input::get('add');
+		
+         setcookie($idProduct, 1, time()+360000, "/");
         }
        
              return view('product_info')->with('product', $product);   
