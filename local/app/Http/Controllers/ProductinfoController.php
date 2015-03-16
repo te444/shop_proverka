@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 use Input;
 use Session;
 Use Auth;
+Use Cookie;
+
 
 use App;
 class ProductinfoController extends Controller {
@@ -27,9 +29,12 @@ class ProductinfoController extends Controller {
 	
         
         if(Input::get('add')!= NULL){
-            Session::put(Auth::user()->id, Input::get('add'));
-           
+           $key = array();
+           $key[]= Input::get('add');
+          
+           Cookie::make('mama', '2222');
         }
+       
              return view('product_info')->with('product', $product);   
     }
     

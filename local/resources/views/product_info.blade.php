@@ -59,6 +59,7 @@ echo "<td id='tablevideo' rowspan='5'><video src='".$link."' width='100%' style=
 <td>Цена</td>
 <td><?php
  echo $product->price." $";
+ 
 ?></td>
 </tr>
 

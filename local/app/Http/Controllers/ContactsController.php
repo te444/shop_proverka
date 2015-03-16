@@ -17,13 +17,9 @@ class ContactsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index($id)
+	public function index()
 	{
-	
-	$product= \App\Product::find($id);
-		
-	
-    return view('product_info')->with('product', $product);
+	  return view('contacts');
                 
     }
 	

@@ -1,7 +1,11 @@
 <?php 
 namespace App\Http\Controllers;
-
+use App\Product;
+use Session;
 use App;
+use Auth;
+use Illuminate\Support\Facades\Redirect;
+use Cookie;
 class BasketController extends Controller {
 
 	
@@ -19,11 +23,26 @@ class BasketController extends Controller {
 	 */
 	public function index()
 	{
-	$users  = \App\User::);
-	
-    return view('basket');
+          
+	//$orderproducts = Session::get(Auth::user()->id);
+	$a = Cookie::get('mama');
+    return view('basket')->with('orderproducts',$a );
                 
     }
-	
+    
+   /* public function getDelete($id){
+     
+        $all= array();
+        $all = Session::get(Auth::user()->id);
+        unset($all[$id]);
+        Session::forget(Auth::user()->id);
+        Session::push(Auth::user()->id, $all);
+       
+       return Redirect::to('basket');
+
 
 }
+	
+*/
+}
+?>

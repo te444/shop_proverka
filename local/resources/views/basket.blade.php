@@ -5,25 +5,24 @@
 	<div class="row">
 		
 			<div class="panel panel-default">
-                            <div class="panel-heading"><p>Карзина товаров</p></div>
+                            <div class="panel-heading"><p>Корзина товаров</p></div>
                                    
 				<div class="panel-body">
-			       <table class="table table-hover">
+			       <table class="table table-hover basket-table">
   
   
                                    <tr>
-                                       <td>Товар</td>
-                                       <td>Количество</td>
-                                       <td>Дата добавления</td>
-                                       <td>Действие</td>
+                                       <th>Товар</th>
+                                       <th>Изображение</th>
+                                       <th>Дата добавления заказа</th>
+                                       <th>Удалить из корзины</th>
                                    </tr>
                                    
-  
-  
-  
-  
-  
-  
+                             <?php
+                             echo $orderproducts;
+                             echo 123;
+                             ?>
+                           
   
   
   
