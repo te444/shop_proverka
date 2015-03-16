@@ -6367,3 +6367,38 @@ margin:auto;
 #product_info td{
     margin: 150px;
 }
+
+.basket-table td{
+text-align: center;
+    width: 25%;
+    vertical-align: 25px;
+}
+
+
+.basket-table th{
+
+text-align: center;
+}
+
+
+#contat_img table{
+    height: 250px;
+    width: 70%;
+    float: right;
+}
+#contat_img table td{
+    width: 50%;
+}
+
+#contat_img img{
+    height: 100%;
+}
+
+#contact_map{
+    width: 500px; 
+    height: 470px;
+    text-align: center;
+    margin: auto;
+    
+}
+   
