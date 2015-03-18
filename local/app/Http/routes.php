@@ -12,18 +12,16 @@
 */
 Route::get('/', 'HomeController@index');
 Route::get('products', 'ProductController@index');
+Route::get('products/{cat}', 'ProductController@showCat');
+
 Route::get('test', 'HomeController@test');
 Route::get('product/{id}', 'ProductinfoController@index');
 
 Route::get('contacts', 'ContactsController@index');
-Route::get('basket', 'BasketController@index');
-Route::get('basket/{id}', 'BasketController@delete');
+//Route::get('basket', 'BasketController@index');
+//Route::get('basket/{id}', 'BasketController@delete');
 
 
-
-
-//Route::get('admin', 'Adminka\AdminController@index');
-//Route::get('admin/parse', 'Adminka\AdminController@parse');
 
 
 
@@ -31,7 +29,7 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 	'admin' => 'Adminka\AdminController',
-        //'basket' => 'BasketController',
+    'basket' => 'BasketController',
        
        
 	

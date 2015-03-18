@@ -7,13 +7,15 @@
 			<div class="panel panel-default">
                             <div class="panel-heading" style="text-align: center">Выберите фирму</div>
 
-				<div class="panel-body">
+				<div class="panel-body" align='center' >
                                     <table id="product_table">
                                         <tr>
-                                        <td><a href="">Adamas Piguet</a></td>
-                                        <td><a href="">Casio</a></td>
-                                        <td><a href="">Hublot</a></td>
-                                        <td><a href="">Rolex</a></td>
+										
+										@foreach($cats as $cat)
+				<td><a href="{{asset('products/'.str_replace(' ', '_', $cat->name))}}">{{$cat->name}}</a></td>
+										@endforeach
+                                        
+                                       
                                         </tr>
                                     </table>	
 				</div>
@@ -27,31 +29,10 @@
 	<div class="row">
 		
 			<div class="panel panel-default">
-                            <div class="panel-heading"><p>Последние добавления</p></div>
+                            <div class="panel-heading"><p align='center'><b >Последние добавления</b></p></div>
                                    
 				<div class="panel-body">
-			<table id="lastadd" >
-    <tr>
-    <?php 
-    $i=1;
-    foreach ($products as $product){
-        echo "<td ><table id='onepr' border='1'>";
-        echo "<tr><td>Добавлен".$product->created_at."</td><td> Цена:".$product->price."</td></tr>"; 
-        echo "<tr><td id='primg' colspan='2'>".$product->img."</td></tr>";
-        echo "<tr><td colspan='2'>".$product->inform."</td></tr>";
-        echo "</table></td>";
-        
-        if($i==3)
-                echo "</tr><tr>";
-        $i++;
-    }
-    
-    
-    
-    ?>
-    
-    </tr>
-</table>     
+			{!!$table!!}
 				</div>
 			</div>
 		

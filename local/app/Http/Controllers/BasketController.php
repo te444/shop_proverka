@@ -22,7 +22,7 @@ class BasketController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
 	{
 	$allProduct = array();
 	
@@ -47,25 +47,14 @@ class BasketController extends Controller {
                 
     }
    
-   /* public function getDelete($id){
+    public function getDelete($id){
      
-        $all= array();
-        $all = Session::get(Auth::user()->id);
-        unset($all[$id]);
-        Session::forget(Auth::user()->id);
-        Session::push(Auth::user()->id, $all);
+       
+       setcookie($id, '', time()-3600, '/');
        
        return Redirect::to('basket');
 
 
-	      @foreach($orderproducts as $product)
-							<tr>
-							<td>{{$product->marka.": ".$product->model}}</td>
-							<td><img src="{{asset('img/clock/'.$product->img)}}" width="30%"/> </td>
-							</tr>
-							@endforeach
 }
-	
-*/
 }
 ?>

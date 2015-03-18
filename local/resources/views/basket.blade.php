@@ -24,7 +24,7 @@
                                <td>{{$orderproduct->marka.": ".$orderproduct->model}}</td>
                                <td><img src="{{asset('img/clock/'.$orderproduct->img)}}" width="25%"/></td>
                                <td></td>
-                               <td><img src="{{asset('img/system/delete.png')}}" width="15%"/></td>
+                               <td><a href="{{asset('basket/delete/'.$orderproduct->id)}}" ><img src="{{asset('img/system/delete.png')}}" width="12%"/></a></td>
                            </tr>
                            
                            

@@ -53,6 +53,7 @@ public function getAdd(){
 
 public function postAdd(){
      $add = new \App\Product();
+	
     $input  = new \Illuminate\Support\Facades\Input();
    
     if($input::get('marka') != Null ){
@@ -65,7 +66,8 @@ public function postAdd(){
 	$model = $input::get('model');
 	$marka = $input::get('marka');
 	$weight = $input::get('weight');
-        $property = $input::get('property');
+    $property = $input::get('property');
+    $cat = $input::get('cat');
 	
     $name = $input::get('name');
     $add->name = $name;
@@ -76,6 +78,7 @@ public function postAdd(){
     $add->weight = $weight;
     $add->property = $property;
     $add->video = $video_name;
+    $add->cat = $cat;
     $add->save();
     
    }
