@@ -70,29 +70,26 @@
     <div class="item active">
       <img class="img_carusel" src="{{asset('img/slide-bar/slide1.jpg')}}" alt="...">
       <div class="carousel-caption">
-       asdf
+          <p><b><i>Гарнтия качества</i></b></p>
       </div>
     </div>
     <div class="item">
       <img class="img_carusel" src="{{asset('img/slide-bar/slide2.jpg')}}" alt="...">
       <div class="carousel-caption">
-    asdfa
+          <p><b><i>Гарнтия качества</i></b></p>
+          <p><b><i>Быстрая доставка</i></b></p>
       </div>
     </div><div class="item">
       <img class="img_carusel" src="{{asset('img/slide-bar/slide3.jpg')}}" alt="...">
       <div class="carousel-caption">
-    asdfa
+            <p><b><i>Гарнтия качества</i></b></p>
+         <p> <b><i>Быстрая доставка</i></b></p>
+         <p>  <b><i>Низкие цены</i></b></p>
+         
       </div>
     </div>
    <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+  
   </div>
 
   
