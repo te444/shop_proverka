@@ -65,11 +65,11 @@ echo "<td id='tablevideo' rowspan='5'><video src='".$link."' width='100%' style=
 
 <tr>
     <td colspan="2" style="text-align: center;">
-        <form method="get" >
+        <form method="get"  >
          <input type="hidden" name="add" value="{{$product->id}}" />
          <input type="submit" value="Добавить в корзину" />
         </form>
-    
+   
 </td>
 </tr>
 

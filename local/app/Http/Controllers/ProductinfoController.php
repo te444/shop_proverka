@@ -26,17 +26,15 @@ class ProductinfoController extends Controller {
 	{
 	
 	$product= \App\Product::find($id);
-	
-        
-        if(Input::get('add')!= NULL){
+	if(Input::get('add')!= NULL){
 		 $idProduct = Input::get('add');
 		
          setcookie($idProduct, 1, time()+360000, "/");
         }
-       
-             return view('product_info')->with('product', $product);   
+	
+	 return view('product_info')->with('product', $product);   
     }
-    
+	
     
 	
 

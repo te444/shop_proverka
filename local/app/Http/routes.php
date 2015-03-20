@@ -17,6 +17,7 @@ Route::get('products/{cat}', 'ProductController@showCat');
 Route::get('test', 'HomeController@test');
 Route::get('product/{id}', 'ProductinfoController@index');
 
+
 Route::get('contacts', 'ContactsController@index');
 //Route::get('basket', 'BasketController@index');
 //Route::get('basket/{id}', 'BasketController@delete');
