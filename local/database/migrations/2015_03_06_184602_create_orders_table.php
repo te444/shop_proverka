@@ -15,11 +15,16 @@ class CreateOrdersTable extends Migration {
 		Schema::create('orders', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('product_name');
-			$table->string('id_user');
-			$table->time('date');
-			$table->string('comments');
+			$table->string('id_product');
+			
+			$table->string('name');
+			$table->string('lastname');
+			$table->string('tel');
+			$table->string('address');
 			$table->string('number');
+			$table->time('date');
+			$table->timestamps();
+			
 		});
 	}
 
@@ -34,3 +39,4 @@ class CreateOrdersTable extends Migration {
 	}
 
 }
+// модели орм локвунд

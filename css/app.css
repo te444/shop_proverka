@@ -6460,12 +6460,12 @@ text-align: center;
 }
 
 .basket_img li{
-   background: url("/img/system/senden-warenkorb--online-shopping_318-10024.png") no-repeat scroll 108px 19px transparent;
+   background: url("/img/system/senden-warenkorb--online-shopping_318-10024.png") no-repeat scroll  45px 4px transparent;
     padding-left: 45px;
     padding-top: 12px;
      display: inline-block;
    height: 60px;
-  width: 100%;
+  width: 57%;
 color: #777777;
 font-family: kelson_sans_ruregular;
     font-size: 1.2em;

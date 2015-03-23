@@ -52,24 +52,22 @@ public function getAdd(){
  }
 
 public function postAdd(){
-     $add = new \App\Product();
-	
-    $input  = new \Illuminate\Support\Facades\Input();
+    $add = new \App\Product();
+	$input  = new \Illuminate\Support\Facades\Input();
    
     if($input::get('marka') != Null ){
-	
 	$img_name = time().'image.jpg';
-        $video_name = time().'video.mp4';
+    $video_name = time().'video.mp4';
 	$img = $input::file('image')->move("img/clock", $img_name);
-        $img = $input::file('video')->move("video/clock", $video_name);
+    $img = $input::file('video')->move("video/clock", $video_name);
 	$price = $input::get('price');
 	$model = $input::get('model');
 	$marka = $input::get('marka');
 	$weight = $input::get('weight');
     $property = $input::get('property');
     $cat = $input::get('cat');
+	$name = $input::get('name');
 	
-    $name = $input::get('name');
     $add->name = $name;
     $add->img = $img_name;
     $add->price = $price;
@@ -80,16 +78,15 @@ public function postAdd(){
     $add->video = $video_name;
     $add->cat = $cat;
     $add->save();
-    
-   }
+  }
 
 }
 
 public function getProductlist(){
 $allproduct = Product::all();
  $product = view('admin/productlist')->with('allproduct', $allproduct);
+ 
  return view('admin/admin')->with('productlist', $product);
-
 }
 
 public function getDelete($id){

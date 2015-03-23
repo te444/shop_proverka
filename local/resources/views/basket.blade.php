@@ -21,6 +21,7 @@
                                    </tr>
                                    
                            @foreach($orderproducts as $orderproduct)
+						   
                            <tr>
                                <td>{{$orderproduct->marka.": ".$orderproduct->model}}</td>
                                <td><img src="{{asset('img/clock/'.$orderproduct->img)}}" width="25%"/></td>
@@ -48,25 +49,22 @@
                                        
                                             
                 
-                            if(count($orderproducts)>0){
+                if(count($orderproducts)>0){
                 echo " <div id='order'>
                                         <hr/>
                                         <br/><br/>";
-                echo "<p id='pre_text2'><b>Укажите ваши данные</b></p>
-                                        <table class='table order_form' style='text-align: center;'>";
-                echo Form::open(array('url' => '/admin/add', 'method' => 'get'));
-                echo  "<tr><td>".Form::label('name', 'Имя').":".Form::text('name')."</td><br />";
-                echo  "<td>".Form::label('last_name', 'Фамилия').":".Form::text('last_name')."</td></tr><br />";
-                echo  "<tr><td>".Form::label('address', 'Адрес').":".Form::text('address')."</td><br />";
-                echo  "<td>".Form::label('tel', 'Телефон').":".Form::text('tel')."</td></tr><br />";
-               
-                echo "<tr><td colspan='2'>".Form::submit('Заказать')."</td></tr> </table> ";
+               echo "<p id='pre_text2'><b>Укажите ваши данные</b></p> 
+			   <table class='table order_form' style='text-align: center;'>";
+                  
+			   echo Form::open(array('url' => '/basket/add', 'method' => 'get'));
+               echo  "<tr><td>".Form::label('name', 'Имя').":".Form::text('name')."</td><br />";
+               echo  "<td>".Form::label('last_name', 'Фамилия').":".Form::text('last_name')."</td></tr><br />";
+               echo  "<tr><td>".Form::label('address', 'Адрес').":".Form::text('address')."</td><br />";
+               echo  "<td>".Form::label('tel', 'Телефон').":".Form::text('tel')."</td></tr><br />";
+               echo "<tr><td colspan='2'>".Form::submit('Заказать')."</td></tr> </table> ";
                             }
         
 ?>
-                                          
-                                        
-                                        
                                     </div>
 				</div>
 			</div>
