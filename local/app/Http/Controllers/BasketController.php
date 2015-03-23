@@ -34,14 +34,12 @@ class BasketController extends Controller {
 	}
 	
 	}
-	
- 
+        
 	$prod_arr = array();
 	foreach($allProduct as $key=>$value){
 	 $prod_arr[] =  Product::find($key);
 	}
-	
-	
+      
 	
     return view('basket')->with('orderproducts',$prod_arr );
                 

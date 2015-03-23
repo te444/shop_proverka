@@ -8,16 +8,18 @@
                             <div class="panel-heading" style="text-align: center">Выберите фирму</div>
 
 				<div class="panel-body" align='center' >
-                                    <table id="product_table">
-                                        <tr>
-										
-										@foreach($cats as $cat)
-				<td><a href="{{asset('products/'.str_replace(' ', '_', $cat->name))}}">{{$cat->name}}</a></td>
-										@endforeach
+                                					
+				@foreach($cats as $cat)
+                                <div class="prod_img">   <a href="{{asset('products/'.str_replace(' ', '_', $cat->name))}}"><img src="{{asset('img/system/'.str_replace(' ', '_', $cat->name).'.jpg')}}" width="35%"/></a></div>
+				@endforeach
                                         
-                                       
-                                        </tr>
-                                    </table>	
+                                      	
+                                    
+                                      
+                                    
+                                        
+                                        
+                                    
 				</div>
 			</div>
 		</div>
@@ -29,7 +31,7 @@
 	<div class="row">
 		
 			<div class="panel panel-default">
-                            <div class="panel-heading"><p align='center'><b >Последние добавления</b></p></div>
+                            <div class="panel-heading"><p align='left'><b><?php if(isset($title)) echo $title; else echo 'Каталог продукции'; ?></b></p></div>
                                    
 				<div class="panel-body">
 			{!!$table!!}

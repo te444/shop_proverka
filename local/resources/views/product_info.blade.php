@@ -68,6 +68,7 @@ echo "<td id='tablevideo' rowspan='5'><video src='".$link."' width='100%' style=
         <form method="get"  >
          <input type="hidden" name="add" value="{{$product->id}}" />
          <input type="submit" value="Добавить в корзину" />
+       
         </form>
    
 </td>
@@ -78,7 +79,7 @@ echo "<td id='tablevideo' rowspan='5'><video src='".$link."' width='100%' style=
 		</div>
 	</div>
 </div>
-    
+</div>
     
     
     

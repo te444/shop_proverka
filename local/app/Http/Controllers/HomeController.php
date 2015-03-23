@@ -19,7 +19,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-	$last_added= \App\Product::all();;
+	$last_added= \App\Product::paginate(6);
 		
 	$a = view('last_added')->with('products', $last_added);
         return view('home')->with('last_added', $a);
