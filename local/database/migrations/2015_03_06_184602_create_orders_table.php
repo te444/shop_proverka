@@ -16,7 +16,6 @@ class CreateOrdersTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('id_product');
-			
 			$table->string('name');
 			$table->string('lastname');
 			$table->string('tel');

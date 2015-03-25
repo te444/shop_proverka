@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Input;
 use Session;
 Use Auth;
+use Illuminate\Support\Facades\Redirect;
 Use Cookie;
 
 
@@ -30,7 +31,9 @@ class ProductinfoController extends Controller {
 		 $idProduct = Input::get('add');
 		
          setcookie($idProduct, 1, time()+360000, "/");
+         return Redirect::back();
         }
+        
 	
 	 return view('product_info')->with('product', $product);   
     }

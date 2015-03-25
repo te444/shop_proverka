@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Cookie;
 class BasketController extends Controller {
 
-    public $prod = array();
+
 	
 	public function __construct()
 	{
@@ -34,17 +34,14 @@ class BasketController extends Controller {
 	$allProduct[$name] = $number;
 	}
 	}
-    $prod_arr = array();
+        
+       
+          $prod_arr = array();
 	foreach($allProduct as $key=>$value){
-	 $prod_arr[] =  Product::find($key);
+	if( Product::find($key) != null){
+            $prod_arr[] =  Product::find($key);
+        }
 	}
-	
-	for($i=0; $i<count($prod_arr); $i++){
-	if($prod_arr[$i]== Null)
-	unset($prod_arr[$i]);
-	}
-	
-	$this->prod = $prod_arr;
 	
    return view('basket')->with('orderproducts',$prod_arr );
                 
@@ -58,40 +55,41 @@ class BasketController extends Controller {
 	 
 public function getAdd(){
   $order= new \App\Orders();
- 
-  $input  = new \Illuminate\Support\Facades\Input();
-   
-   $order_prod = array();
+ $input  = new \Illuminate\Support\Facades\Input();
+  $order_prod = array();
 	foreach($_COOKIE as $name => $number){
 	$name = (int)$name;
 	$order_prod[] = $name;
 	}
-	for($i=0; $i<count($order_prod); $i++){
-	if($order_prod[$i]== Null)
-	unset($order_prod[$i]);
-	}
-	
-	
- 
+   $prod_arr = array();
+	foreach($order_prod as $key=>$value){
+	if( Product::find($key) != null){ 
+            $prod_arr[] =  Product::find($key)->id;
+       }
+    }
   if($input::get('name') != Null ){
   $name = $input::get('name');
-	
-  /*$lastName = $input::get('last_name');
+  $lastName = $input::get('last_name');
   $adress = $input::get('address');
   $tel = $input::get('tel');
-  
-  $order->id_product=serialize($order_prod);
+  $number_prod = $input::get('number');
+  $order->id_product=serialize($prod_arr);
   $order->lastname= $lastName;
   $order->tel=$tel;
   $order->address=$adress;
- */
-  $order->name=123;
- 
-  //$order->number=$this->prod;
-  $order->save;
+  $order->name=$name;
+  $order->number=$number_prod;
+  $order->save();
+  
+  }
+   foreach ($order_prod as $key=>$id){
+  setcookie($id, '', time()-3600, '/');
 }
 
+return Redirect::to('basket')->with('alert', '1');
+
+  }
 
 }
-}
+
 ?>

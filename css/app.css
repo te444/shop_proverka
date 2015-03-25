@@ -6354,7 +6354,7 @@ text-align:center;
 
 .img_carusel{
 width: 80%;
-height: 70%;
+height: 60% !important;
 margin: 0 auto;
 border-radius: 5px;
 }
@@ -6394,7 +6394,7 @@ margin:auto;
 
 .basket-table td{
 text-align: center;
-    width: 25%;
+    width: 20%;
     vertical-align: 25px;
 }
 
@@ -6460,7 +6460,7 @@ text-align: center;
 }
 
 .basket_img li{
-   background: url("/img/system/senden-warenkorb--online-shopping_318-10024.png") no-repeat scroll  45px 4px transparent;
+   background: url("/img/system/senden-warenkorb--online-shopping_318-10024.png") no-repeat scroll  38px 4px transparent;
     padding-left: 45px;
     padding-top: 12px;
      display: inline-block;
@@ -6469,15 +6469,15 @@ text-align: center;
 color: #777777;
 font-family: kelson_sans_ruregular;
     font-size: 1.2em;
-   
+   float: right;
     vertical-align: bottom;
     overflow: hidden;
-  text-align: right;
+  
   
 }
 .basket_img a{
     text-decoration: none;
-    text-align: right;
+
     font-size: 1.05em;
     color: #777777;
 font-family: kelson_sans_ruregular;
@@ -6485,13 +6485,14 @@ font-family: kelson_sans_ruregular;
 
 .basket_img p{
     margin-bottom: -10px;
+    padding-left: 50px;
 }
 .basket_img{
     margin-bottom: 0;
 }
 .basket_img{
-    text-align: right;
-    width: 38%;
+    
+    width: 40%;
     float: right;
 }
 
@@ -6580,4 +6581,45 @@ font-family: kelson_sans_ruregular;
     color: black;
     font-style: normal;
     
+}
+#empty_basket input{
+    margin-top: 10px;
+   
+}
+#empty_basket input[type="submit"]{
+    margin-bottom: 25px;    
+}
+#empty_basket form{
+    text-align: center;
+}
+
+#dilevery_img{
+    clear: left;
+float: right;
+    width: 50%;
+    text-align: right;
+}
+#dilevery_img img{
+    
+    margin-bottom: 25px;
+}
+#dilevery p{
+    margin-left: 25px;
+    font-size: 1.25em;
+    font-family: kelson_sans_ruregular;
+    font-style: italic;
+}
+#dilevery p:first-of-type{
+    font-weight: bold;
+    font-style: normal;
+  text-align: center;
+ margin-top: 25px;
+ margin-bottom: 20px;
+}
+#dilevery hr{
+    margin: 3px;
+    margin-bottom: 5px;
+}
+#dilevery_img2{
+    margin-left: 15%;
 }

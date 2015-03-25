@@ -32,15 +32,16 @@
 <ul id="menu" class="nav navbar-nav">
     <li><a href="/">Главная</a></li>
     <li ><a  href="{{asset('/products')}}" class="<?php if(asset($_SERVER['REQUEST_URI'])== asset('/products')) echo "selected";  ?>">Продукция</a></li>
+    <li ><a  href="{{asset('/dilevery')}}" class="<?php if(asset($_SERVER['REQUEST_URI'])== asset('/delivery')) echo "selected";  ?>">Доставка</a></li>
     <li><a href="{{asset('/contacts')}}" class="<?php if(asset($_SERVER['REQUEST_URI'])== asset('/contacts')) echo "selected";  ?>">Контакты</a></li>
 
 </ul>
     
 <ul class="basket_img" align='right'>
-    <li align='left'>
+    <li>
         <a href="{{asset('/basket')}}">
         <p >Корзина</p>
-        <p>Товаров <span id="cart_ajax_output">: 0</span></p>
+        <p>Товаров <span id="cart_ajax_output">: {{$number}}</span></p>
 </a>
 
 </li>
@@ -62,7 +63,7 @@
 <div class="item active">
 <img class="img_carusel" src="{{asset('img/slide-bar/slide-one.jpg')}}" alt="...">
 <div class="carousel-caption">
-<p><b><i>Гарнтия качества</i></b></p>
+<p><b><i>Гарантия качества</i></b></p>
 </div>
 </div>
 <div class="item">
@@ -93,7 +94,7 @@
 <div id="footer">
     <table id="table_footer">
         <tr>
-            <td>  <img src="{{asset('/img/system/footer_logo.png')}}"</td>
+            <td>  <img src="{{asset('/img/system/footer_logo.png')}}" /></td>
             <td id="main_prew"> <b>Контактыный телефон</b><br/>+375(33)359-85-22  </td>
             <td><b>Вопросы и пожелания отправляйте на почту</b><br/>
                                   clock-shop@gmail.com</td>
