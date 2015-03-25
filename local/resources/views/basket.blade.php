@@ -54,7 +54,7 @@
                                             <p style="color:red;"><b> Если вы ранее отправляли заказ, и хотите узнать его статус пожалуйста</b></p>
                                         <?php
                                         echo Form::open(array('url' => 'basket/status', 'method' => 'post'));
-                                        echo  Form::label('tel', 'Введите телефон указанный при добавлении заказа').":".Form::text('tel')."<br />";
+                                        echo  Form::label('tel_status', 'Введите телефон указанный при добавлении заказа').":".Form::text('tel_status')."<br />";
                                         echo Form::submit('Запрос').Form::close() ;
                                         ?>
                                         </div>
