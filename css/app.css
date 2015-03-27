@@ -6623,3 +6623,63 @@ float: right;
 #dilevery_img2{
     margin-left: 15%;
 }
+
+.telorder td{
+    
+   width: 20%; 
+   text-align: center;
+ 
+}
+
+.telorder th{
+    text-align: center;
+}
+
+#yni{
+  text-align: justify;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+
+.adminorder th,td{
+   text-align: center; 
+   width: 16.5%;
+}
+
+.perprod th{
+    text-align: center;
+}
+
+#admin_cat li {
+   display: block;
+   list-style-type: none;
+   float: left;
+   font-size: 1.15em;
+   font-weight: bold;
+   
+       
+}
+#admin_cat a{
+   color:#777777; 
+}
+.admin_pannel{
+    height: 55px;
+    vertical-align: middle;
+}
+
+#addproducta {
+    width: 100%;
+    text-align: center;
+}
+#addproducta input{
+    margin-top: 3px;
+    margin-bottom: 7px;
+}
+#addcenter{
+    width: 32%;
+    margin: auto;   
+    text-align: left;
+}

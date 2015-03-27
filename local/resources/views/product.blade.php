@@ -35,6 +35,10 @@
                                    
 				<div class="panel-body">
 			{!!$table!!}
+                        <?php
+        if (isset($products))
+           echo "<div align='center'>".$products->render()."</div>";
+    ?>
 				</div>
 			</div>
 		

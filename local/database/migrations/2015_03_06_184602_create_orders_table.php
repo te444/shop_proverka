@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration {
 			$table->string('tel');
 			$table->string('address');
 			$table->string('number');
+                        $table->string('status');
 			$table->time('date');
 			$table->timestamps();
 			

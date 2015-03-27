@@ -25,7 +25,7 @@ class BasketController extends Controller {
 	 */
 	public function getIndex()
 	{
-	
+	 $this->title='Корзина';
 	$allProduct = array();
 	foreach($_COOKIE as $name => $number){
 	
@@ -67,18 +67,29 @@ public function getAdd(){
 									$prod_arr[] =  Product::find($key)->id;
 							   }
 							}
+                                                   if($input::get('name')==null or $input::get('last_name')==null or $input::get('address')==null or $input::get('tel')==null){
+                                                       return Redirect::to('basket')->with("error", '1');
+                                                   }
 						  if($input::get('name') != Null ){
 						  $name = $input::get('name');
 						  $lastName = $input::get('last_name');
 						  $adress = $input::get('address');
 						  $tel = $input::get('tel');
-						  $number_prod = $input::get('number');
+                                                  $number_prod=  array();
+                                                  foreach ($order_prod as $prod){
+                                                      if($prod==null)
+                                                          continue;
+                                                      
+                                                      $number_prod[]=$input::get('number'.$prod);
+                                                  } 
+						  
+                                                
 						  $order->id_product=serialize($prod_arr);
 						  $order->lastname= $lastName;
 						  $order->tel=$tel;
 						  $order->address=$adress;
 						  $order->name=$name;
-						  $order->number=$number_prod;
+						  $order->number= serialize($number_prod);
 						  $order->save();
 						  
 											  }
@@ -93,20 +104,30 @@ public function getAdd(){
   
 					  
 					  public function postStatus(){
+                                             $this->title='Статус заказа';
 					  $order= new \App\Orders();
 					  $input = new \Illuminate\Support\Facades\Input();
 					  $tel = $input::get('tel_status');
 					 
-					  $products =$order::where('tel', '=', $tel)->get();
-					   
+            		               $products =$order::where('tel', '=', $tel)->get();
+                                            
+                                        if(count($order::where('tel', '=', $tel)->get()) == 0){
+                                           return Redirect::to('basket')->with("errorstat", '2');
+                                        }
+                                        $products =$order::where('tel', '=', $tel)->get();
 					   foreach($products as $product){
 					  $id_product = unserialize($product->id_product);
 					  }
+                                     
+                                          
 					  $prodinfo=array();
 					  foreach ($id_product as $id){
-					   $prodinfo[] = Product::find($id);
+					    if(Product::find($id)!= null){
+                                                $prodinfo[] =Product::find($id);
+                                            }
 					 }
-					
+                                         
+				
 				   return view('orederbytel')->with('products',$products )->with('prodinfo',$prodinfo);
 }
 

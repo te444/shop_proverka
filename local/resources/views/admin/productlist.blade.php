@@ -1,6 +1,6 @@
 <div>
     
-    <table class='table list'>
+    <table class='table list perprod'>
         
         <tr>
             <th>Товар</th>

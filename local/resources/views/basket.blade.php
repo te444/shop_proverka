@@ -29,7 +29,7 @@
                                <td><?php echo Form::open(array('url' => '/basket/add', 'method' => 'get'));
                                      
                                   ?>
-                                   <input type="number" min="1" value="1" name="number" /></td>
+                                   <input type="number" min="1" value="1" name="number{{$orderproduct->id}}" /></td>
                                <td>
                                   
                                </td>
@@ -66,10 +66,23 @@
                                         alert('Заказ отправлен на обработку.В ближайшее время с вами свяжутся по телефону.Что бы узнать статус вашего заказа веведите номер телефона(в таком же формате, который указывали при добавлении заказа),нажав на кнопку "Статус заказа"');
                                     </script>
                                     @endif
+                                  
+                                    
+                                     @if(Session::has('error') != null)
+                                    <script>
+                                        alert('Пожалуйста заполните все поля');
+                                    </script>
+                                    @endif
+                                    
+                                    @if(Session::has('errorstat') != null)
+                                    <script>
+                                        alert('Введенный вами номер отсутствует в базе либо вы ничего не заказывали. Пожалуйста проверьте его коректность');
+                                    </script>
+                                    @endif
                                     
                                    <?php 
-                                   
                 if(isset($orderproducts) && count($orderproducts)>0){
+                    
                 echo " <div id='order'>
                                         <hr/>
                                         <br/><br/>";
@@ -90,5 +103,5 @@
 			</div>
 		
 	</div>
-</div>
+
 @endsection

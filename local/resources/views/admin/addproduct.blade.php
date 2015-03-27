@@ -1,9 +1,8 @@
-@extends('app')
-
-@section('content')
-
+<div id="addproducta"> <hr />
+    <div id="addcenter">
+       
 <?php
-echo "<hr / >";
+
 
 echo Form::open(array('url' => '/admin/add', 'method' => 'post', 'files'=>true));
 echo  Form::label('cat', 'Выберите раздел').":".Form::select('cat', array('Adamas Piguet' => 'Adamas Piguet', 'Casio' => 'Casio', 'Hublot'=>'Hublot', 'Rolex'=>'Rolex'))."<br />";
@@ -16,9 +15,13 @@ echo  Form::label('image', 'Изображение').":".Form::file('image')."<b
 echo  Form::label('video', 'Видео').":".Form::file('video')."<br />";
 echo Form::submit('Отправить').Form::close() ;
 
-        
+      
 ?>
-
-
-
-@endsection
+        
+    </div><hr />
+     @if(Session::has('alert') != null)
+        <script>
+            alert('Товар добавлен в базу');
+        </script>
+        @endif
+</div>

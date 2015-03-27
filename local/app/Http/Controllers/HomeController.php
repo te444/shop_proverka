@@ -10,7 +10,8 @@ class HomeController extends Controller {
 		
 		parent::__construct();
 		$this->styles[]= '';
-		}
+                $this->title= 'Watch Shop';
+	}
 
 	/**
 	 * Show the application dashboard to the user.

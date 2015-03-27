@@ -33,7 +33,7 @@ class ProductinfoController extends Controller {
          setcookie($idProduct, 1, time()+360000, "/");
          return Redirect::back();
         }
-        
+        $this->title= $product->marka.": ".$product->model;
 	
 	 return view('product_info')->with('product', $product);   
     }

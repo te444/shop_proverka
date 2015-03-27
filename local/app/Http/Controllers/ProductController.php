@@ -11,6 +11,7 @@ class ProductController extends Controller {
 		
 		parent::__construct();
 		$this->styles[]= '';
+               
 		}
 
 	/**
@@ -20,22 +21,24 @@ class ProductController extends Controller {
 	 */
 	public function Index()
 	{
+             $this->title= 'Категории товаров';
 	   $cats = \App\Category::all();
-	   $last_added= \App\Product::paginate(2);
+	   $last_added= \App\Product::paginate(6);
            
 	$view = view('last_added')->with('products', $last_added);
        
-	return view('product')->with('table', $view)->with('cats', $cats);
+	return view('product')->with('table', $view)->with('cats', $cats)->with('products', $last_added);
                 
     }
 	
 	
 	
 	public function showCat($cat){
+             $this->title= $cat;
 	$cats = \App\Category::all();
 	$cat = str_replace("_", " ", $cat);
 	
-     $product_arr = Product::where('cat', '=', $cat)->paginate(2);
+     $product_arr = Product::where('cat', '=', $cat)->paginate(6);
    
 	$view = view('last_added')->with('products', $product_arr);
       $title = "<a href='".asset('/products')."'>Продукция</a> : фирмы ".$cat;

@@ -16,18 +16,14 @@ $this->styles[]= 'css/admin.css';
 }
 
 public function getIndex(){
-
+ $this->title='Панель Администратора';
 return view('admin/admin');
+
 }
 
-
-public function getParse(){
-    
-    return view('admin/admin')->nest('parse_form', 'admin/parseform');
-    
-}
 
 public function getUsers(){
+     $this->title='Зарегистрированные пользователи';
 $users  = \App\User::all();
 $a = view('admin/regusers')->with('users', $users);
 return view('admin/admin')->with('regusers', $a);
@@ -35,21 +31,47 @@ return view('admin/admin')->with('regusers', $a);
 }
 
 
-public function getBasket(){
-
-$order  = \App\Orders::all();
-$a = view('admin/orderproducts')->with('orders', $order);
-return view('admin/admin')->with('orderproducts', $a);
+public function getOrderprod(){
+    $input  = new \Illuminate\Support\Facades\Input();
+     $this->title='Корзина заказов';
+      $order= new \App\Orders();
+      $stat = $input::get('stat');
+      
+      if( $stat != null){
+       
+          $id= $input::get('order_id');
+         
+         $zak = $order->find($id);
+         
+         $zak->status = $stat;
+         $zak->save();
+     }
+          
+      
+          $order_info = $order::all();
+        
+      for($i=0; $i<count($order_info); $i++){
+          $e= unserialize($order_info[$i]->id_product);
+          $e = Product::find($e);
+          
+          $k = unserialize($order_info[$i]->number);
+        
+          $order_info[$i]->id_product =  $e;
+          $order_info[$i]->number =  $k;
+      }
+         $a = view('admin/orderproducts')->with('orders', $order_info);
+        return view('admin/admin')->with('orderproducts', $a);
 
 
 }
 
 
 
+
 public function getAdd(){
-   
-    return view('admin/admin')->nest('addproduct', 'admin/addproduct');
- }
+     $this->title='Добавить товар';
+return view('admin/admin')->nest('addproduct', 'admin/addproduct');
+}
 
 public function postAdd(){
     $add = new \App\Product();
@@ -77,13 +99,15 @@ public function postAdd(){
     $add->property = $property;
     $add->video = $video_name;
     $add->cat = $cat;
-    $add->save();
+    if($add->save())
+        return Redirect::to('admin/add')->with('alert', '1');
   }
 
 }
 
 public function getProductlist(){
-$allproduct = Product::all();
+ $this->title='Перечень продукции';
+ $allproduct = Product::all();
  $product = view('admin/productlist')->with('allproduct', $allproduct);
  
  return view('admin/admin')->with('productlist', $product);

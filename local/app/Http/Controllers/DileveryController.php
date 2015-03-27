@@ -19,6 +19,7 @@ class DileveryController extends Controller {
 	 */
 	public function index()
 	{
+          $this->title='Доставка и оплата';
 	  return view('dilevery');
                 
     }

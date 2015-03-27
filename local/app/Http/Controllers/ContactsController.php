@@ -19,6 +19,7 @@ class ContactsController extends Controller {
 	 */
 	public function index()
 	{
+             $this->title='Контакты';
 	  return view('contacts');
                 
     }
