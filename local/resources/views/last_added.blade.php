@@ -1,6 +1,6 @@
 
 <table id="lastadd" >
-    
+    <tr class="tabletr">
         <?php
         
         $i=1;
@@ -18,7 +18,7 @@
         <?php
        
         if($i==3)
-                echo "</tr><tr>";
+                echo "</tr><tr class='tabletr'>";
         $i++;
         $k++;
           if($k==6){

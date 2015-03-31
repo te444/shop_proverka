@@ -72,7 +72,6 @@ public function getAdd(){
      $this->title='Добавить товар';
 return view('admin/admin')->nest('addproduct', 'admin/addproduct');
 }
-
 public function postAdd(){
     $add = new \App\Product();
 	$input  = new \Illuminate\Support\Facades\Input();
@@ -89,8 +88,7 @@ public function postAdd(){
     $property = $input::get('property');
     $cat = $input::get('cat');
 	$name = $input::get('name');
-	
-    $add->name = $name;
+ $add->name = $name;
     $add->img = $img_name;
     $add->price = $price;
     $add->model = $model;

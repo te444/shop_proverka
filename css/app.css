@@ -6313,11 +6313,15 @@ font-weight: 300;
 
 
 #lastadd{
-  
+  margin-top:18px;
     width: 100%;
 text-align:center;
 }
-
+.tabletr{
+    display: inline-block;  
+    padding-bottom: 30px;
+    
+}
 #lastadd td{
   width: 25%;
   text-align:center;
